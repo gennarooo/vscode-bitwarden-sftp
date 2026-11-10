@@ -1,0 +1,18 @@
+{
+  "displayName": "Bitwarden SFTP Secrets",
+  "description": "Inserisce le credenziali FTP/SFTP salvate in Bitwarden nel file sftp.json, senza tenerle in chiaro nel progetto.",
+  "command.unlockAndApply": "Sblocca Bitwarden e genera sftp.json",
+  "command.lock": "Blocca e rimuovi le credenziali da sftp.json",
+  "command.sync": "Sincronizza la cassaforte Bitwarden",
+  "command.createTemplate": "Crea template da sftp.json esistente",
+  "command.insertPlaceholder": "Inserisci riferimento a un elemento Bitwarden",
+  "config.cliPath": "Percorso dell'eseguibile Bitwarden CLI (`bw`).",
+  "config.templateFile": "Template (relativo alla cartella del workspace) con i riferimenti `{{bw:...}}`. Questo file si può committare.",
+  "config.outputFile": "File generato letto dall'estensione SFTP.",
+  "config.autoLockMinutes": "Dopo quanti minuti rimuovere automaticamente le credenziali da `sftp.json` (`0` = mai, solo alla chiusura di VS Code).",
+  "config.cleanupMode": "Cosa fare con `sftp.json` al blocco.",
+  "config.cleanupMode.strip": "Riscrive sftp.json lasciando i dati non segreti e rimuovendo i valori presi da Bitwarden.",
+  "config.cleanupMode.delete": "Elimina completamente sftp.json.",
+  "config.rememberSession": "Conserva la sessione Bitwarden nel portachiavi del sistema (SecretStorage di VS Code) per non reinserire la master password a ogni avvio.",
+  "config.manageGitignore": "Aggiunge automaticamente `sftp.json` al `.gitignore`."
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Client website",
+  "host": "ftp.example.com",
+  "protocol": "ftp",
+  "port": 21,
+  "username": "{{bw:Client FTP:username}}",
+  "password": "{{bw:Client FTP:password}}",
+  "remotePath": "/public_html",
+  "uploadOnSave": false,
+  "ignore": [".vscode", ".git", ".DS_Store", "node_modules"]
+}

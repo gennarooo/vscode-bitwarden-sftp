@@ -1,0 +1,125 @@
+{
+  "name": "bitwarden-sftp",
+  "displayName": "%displayName%",
+  "description": "%description%",
+  "version": "0.1.0",
+  "publisher": "local",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gennarooo/vscode-bitwarden-sftp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gennarooo/vscode-bitwarden-sftp/issues"
+  },
+  "homepage": "https://github.com/gennarooo/vscode-bitwarden-sftp#readme",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "bitwarden",
+    "sftp",
+    "ftp",
+    "password",
+    "secrets"
+  ],
+  "main": "./out/extension.js",
+  "activationEvents": [
+    "workspaceContains:.vscode/sftp.template.json"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "bitwardenSftp.unlockAndApply",
+        "title": "%command.unlockAndApply%",
+        "category": "Bitwarden SFTP"
+      },
+      {
+        "command": "bitwardenSftp.lock",
+        "title": "%command.lock%",
+        "category": "Bitwarden SFTP"
+      },
+      {
+        "command": "bitwardenSftp.sync",
+        "title": "%command.sync%",
+        "category": "Bitwarden SFTP"
+      },
+      {
+        "command": "bitwardenSftp.createTemplate",
+        "title": "%command.createTemplate%",
+        "category": "Bitwarden SFTP"
+      },
+      {
+        "command": "bitwardenSftp.insertPlaceholder",
+        "title": "%command.insertPlaceholder%",
+        "category": "Bitwarden SFTP"
+      }
+    ],
+    "configuration": {
+      "title": "Bitwarden SFTP",
+      "properties": {
+        "bitwardenSftp.cliPath": {
+          "type": "string",
+          "default": "bw",
+          "markdownDescription": "%config.cliPath%"
+        },
+        "bitwardenSftp.templateFile": {
+          "type": "string",
+          "default": ".vscode/sftp.template.json",
+          "markdownDescription": "%config.templateFile%"
+        },
+        "bitwardenSftp.outputFile": {
+          "type": "string",
+          "default": ".vscode/sftp.json",
+          "markdownDescription": "%config.outputFile%"
+        },
+        "bitwardenSftp.autoLockMinutes": {
+          "type": "number",
+          "default": 30,
+          "minimum": 0,
+          "markdownDescription": "%config.autoLockMinutes%"
+        },
+        "bitwardenSftp.cleanupMode": {
+          "type": "string",
+          "enum": [
+            "strip",
+            "delete"
+          ],
+          "default": "strip",
+          "enumDescriptions": [
+            "%config.cleanupMode.strip%",
+            "%config.cleanupMode.delete%"
+          ],
+          "markdownDescription": "%config.cleanupMode%"
+        },
+        "bitwardenSftp.rememberSession": {
+          "type": "boolean",
+          "default": false,
+          "markdownDescription": "%config.rememberSession%"
+        },
+        "bitwardenSftp.manageGitignore": {
+          "type": "boolean",
+          "default": true,
+          "markdownDescription": "%config.manageGitignore%"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package",
+    "l10n": "l10n-dev export --outDir ./l10n ./src"
+  },
+  "devDependencies": {
+    "@types/node": "^18.19.0",
+    "@types/vscode": "^1.80.0",
+    "@vscode/l10n-dev": "^0.0.35",
+    "@vscode/vsce": "^3.2.0",
+    "typescript": "^5.4.0"
+  },
+  "l10n": "./l10n"
+}
